@@ -1,3 +1,6 @@
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:dithmarscher_soundboard/sounds.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,6 +30,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> _headshots = [
+    'assets/images/mike_pissed.jpeg',
+  ];
+
+  AudioCache audioCache;
+  AudioPlayer audioPlayer;
+
+  final List _sounds = Sounds().sounds;
+
+  @override
+  void initState() {
+    super.initState();
+    initSounds();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.contain,
               ),
             ),
-            child: Center(
-              child: Text('${index + 1}'),
-            ),
+            child: Container(),
           ),
           onTap: () {
             if (mounted) {
               setState(() {
-                print(index);
+                playSound(_sounds[0]);
               });
             }
           },
@@ -64,8 +80,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
 
-List<String> _headshots = [
-  'assets/images/mike_pissed.jpeg',
-];
+  void initSounds() async {
+    audioPlayer = AudioPlayer();
+    audioCache = AudioCache(fixedPlayer: audioPlayer);
+    audioCache.loadAll(_sounds);
+  }
+
+  void playSound(sound) async {
+    var fileName = sound;
+    if (audioPlayer.state == AudioPlayerState.PLAYING) {
+      audioPlayer.stop();
+    }
+    audioPlayer = await audioCache.play(fileName);
+  }
+}
