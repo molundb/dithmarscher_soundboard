@@ -42,7 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (BuildContext context, int index) => GestureDetector(
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(100.0)),
+              image: DecorationImage(
+                image: AssetImage(_headshots[0]),
+                fit: BoxFit.fill,
+              ),
+            ),
             child: Center(
               child: Text('${index + 1}'),
             ),
@@ -61,3 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+List<String> _headshots = [
+  'assets/images/mike_pissed.jpeg',
+];
