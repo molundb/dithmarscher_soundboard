@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(_headshots[0]),
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
               ),
             ),
             child: Center(
