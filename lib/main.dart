@@ -32,6 +32,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<String> _headshots = [
     'assets/images/mike_pissed.jpeg',
+    'assets/images/tante_marianne.jpg',
+    'assets/images/tante_marianne.jpg',
+    'assets/images/tante_marianne.jpg',
   ];
 
   AudioCache audioCache;
@@ -68,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               curve: Curves.bounceOut,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(_headshots[0]),
+                  image: AssetImage(_headshots[index]),
                   fit: BoxFit.contain,
                 ),
                 borderRadius: new BorderRadius.circular(100.0),
@@ -92,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             if (mounted) {
               setState(() {
-                playSound(_sounds[0]);
+                playSound(_sounds[index]);
                 indexIsPlaying = index;
               });
             }
