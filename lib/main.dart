@@ -36,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   AudioCache audioCache;
   AudioPlayer audioPlayer;
+  int indexIsPlaying;
 
   final List _sounds = Sounds().sounds;
 
@@ -58,19 +59,26 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisSpacing: 15,
         ),
         itemBuilder: (BuildContext context, int index) => GestureDetector(
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(_headshots[0]),
-                fit: BoxFit.contain,
+          child: Center(
+            child: AnimatedContainer(
+              width: indexIsPlaying == index ? 120 : 80,
+              height: indexIsPlaying == index ? 120 : 80,
+              duration: Duration(milliseconds: 400),
+              curve: Curves.bounceOut,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(_headshots[0]),
+                  fit: BoxFit.contain,
+                ),
               ),
+              child: Container(),
             ),
-            child: Container(),
           ),
           onTap: () {
             if (mounted) {
               setState(() {
                 playSound(_sounds[0]);
+                indexIsPlaying = index;
               });
             }
           },
