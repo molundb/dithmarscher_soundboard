@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: GridView.builder(
+        itemCount: 15,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 15,
@@ -70,6 +71,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: AssetImage(_headshots[0]),
                   fit: BoxFit.contain,
                 ),
+                borderRadius: new BorderRadius.circular(100.0),
+                border: new Border.all(
+                    color: indexIsPlaying == index
+                        ? Colors.green
+                        : Colors.transparent,
+                    width: 2.0,
+                    style: BorderStyle.solid),
+                boxShadow: [
+                  new BoxShadow(
+                    color: Colors.grey.withOpacity(0.4),
+                    offset: Offset(0, 10.0),
+                    blurRadius: 10.0,
+                  )
+                ],
               ),
               child: Container(),
             ),
