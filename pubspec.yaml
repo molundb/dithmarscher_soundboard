@@ -49,10 +49,18 @@ flutter:
   assets:
       - assets/images/mike_pissed.jpeg
       - assets/images/tante_marianne.jpg
+      - assets/images/hackfleisch.jpg
+      - assets/images/dödodeldö.jpg
+      - assets/images/dodödeldi.jpg
+      - assets/images/idautit.jpeg
+      - assets/images/uwe.jpg
       - assets/sounds/mike_pissed.mp3
       - assets/sounds/was_ist_denn_hier_los.mp3
       - assets/sounds/was_machst_du_hier.mp3
       - assets/sounds/wie_siehst_du_denn_aus.mp3
+      - assets/sounds/hackfleisch.mp3
+      - assets/sounds/idautit.mp3
+      - assets/sounds/uwe.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
