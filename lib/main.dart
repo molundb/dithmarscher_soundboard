@@ -76,7 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
               curve: Curves.bounceOut,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(_headshots[index]),
+                  image: (index < _headshots.length)
+                      ? AssetImage(_headshots[index])
+                      : AssetImage(_headshots[0]),
                   fit: BoxFit.contain,
                 ),
                 borderRadius: new BorderRadius.circular(100.0),
@@ -100,7 +102,9 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             if (mounted) {
               setState(() {
-                playSound(_sounds[index]);
+                (index < _sounds.length)
+                    ? playSound(_sounds[index])
+                    : playSound(_sounds[0]);
                 indexIsPlaying = index;
               });
             }
