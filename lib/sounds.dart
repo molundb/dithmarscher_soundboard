@@ -9,6 +9,7 @@ class Sounds {
     'sounds/dodödeldi.mp3',
     'sounds/idautit.mp3',
     'sounds/uwe.mp3',
+    'sounds/thüringer_klöße.mp3',
   ];
   get sounds => _sounds;
 }

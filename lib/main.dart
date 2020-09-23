@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'assets/images/dodödeldi.jpg',
     'assets/images/idautit.jpeg',
     'assets/images/uwe.jpg',
+    'assets/images/thüringer_klöße.jpg',
   ];
 
   AudioCache audioCache;

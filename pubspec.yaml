@@ -54,6 +54,7 @@ flutter:
       - assets/images/dodödeldi.jpg
       - assets/images/idautit.jpeg
       - assets/images/uwe.jpg
+      - assets/images/thüringer_klöße.jpg
       - assets/sounds/mike_pissed.mp3
       - assets/sounds/was_ist_denn_hier_los.mp3
       - assets/sounds/was_machst_du_hier.mp3
@@ -61,6 +62,7 @@ flutter:
       - assets/sounds/hackfleisch.mp3
       - assets/sounds/idautit.mp3
       - assets/sounds/uwe.mp3
+      - assets/sounds/thüringer_klöße.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
